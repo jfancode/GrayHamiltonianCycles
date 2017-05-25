@@ -1,0 +1,34 @@
+Cilk program for finding a Hamiltonian cycle in a dense Gray graph.
+Created by jfan for CS49 Parallel Algorithms.
+
+usage: GrayHamiltonian [radices] -n [sequence length] -v [verbosity] 
+     [radices]: a string of mixed or fixed integer radices encased in
+                quotation marks and delimited by spaces.
+                e.g. GrayHamiltonian "2 3 4"
+
+     -n [sequence length]: (optional) an integer sequence length,
+                required if we decide to perform a Gray Hamiltonian
+                search only on that particular value of n. Otherwise,
+                the program will perform the search on all possible
+                values of n starting from n=2 and going to n=(product
+                of the radices).  
+		e.g. GrayHamiltonian "2 3 4" -n 13
+
+     -v [verbosity]: (optional) changes the verbosity from default 2,
+                which for each value of n prints a progress bar and,
+                if no Hamiltonian cycle is found, an appropriate alert
+                with the search status.
+		e.g. GrayHamiltonian "2 3 4" -v 3
+
+		-v 1 outputs only the values of n for which there is
+                     no Hamiltonian cycle
+		-v 2 outputs the above, plus progress bars and time 
+		     lapse for each value of n tried
+		-v 3 outputs the above, plus the Hamiltonian cycle if 
+		     one is found
+		-v 4 (not recommended) outputs the above, plus the 
+		     backtracking stack trace as the DFS is running
+
+For more information about dense Gray codes, please read the PDF in
+this directory titled "Dense Gray codes.pdf" or email jfan at
+jessica.c.fan.17@dartmouth.edu.
