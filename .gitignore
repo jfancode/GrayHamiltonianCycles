@@ -1,0 +1,11 @@
+# Core outputs
+core*
+vgcore*
+
+# Object files
+#.o
+
+# Emacs
+*~
+\#*\#
+.\#*
